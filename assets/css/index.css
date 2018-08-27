@@ -1,0 +1,181 @@
+#lost {
+    display: none;
+}
+
+body {
+    background-image: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/star-wars-stars-background-9.jpg');
+    background-size: cover;
+    height: 100%;
+
+}
+
+h5 {
+    text-align: center;
+    margin: 0 5px;
+    width: 100%
+}
+
+
+h1 {
+    text-align: center;
+    font-family: 'MyWebFont';
+    color: white
+}
+
+.col-sm-3 {
+    border-color: transparent;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+
+h2 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+#attack {
+    display: none;
+    margin: 0 auto;
+}
+
+p {
+    text-align: center;
+
+}
+
+#winning {
+    display: none;
+    z-index: 10;
+    position: absolute
+}
+
+.players {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: 'MyWebFont';
+    color: white
+}
+
+
+.players-img {
+    height: 140px;
+    width: 100px;
+
+
+}
+
+.playing-boxes {
+    height: 300px;
+    width: 200px;
+    border-style: solid;
+    border-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 25px;
+    padding: 10px;
+}
+
+.overlay {
+    background-color: red;
+    opacity: .7;
+    z-index: 1;
+}
+
+.player {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    font-family: 'MyWebFont';
+    color: white;
+
+}
+
+#start-fight {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#player-select {
+    display: none;
+}
+
+#landing-page {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url('https://cdn.vox-cdn.com/thumbor/D3-VFOs9ADtuy1eG6IG5M2Uheqo=/0x0:2592x1458/1220x813/filters:focal(1089x522:1503x936):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/53395743/GTY_star_wars_land_rendering_jef_170208.0.jpg');
+    background-size: cover;
+
+}
+
+@font-face {
+    font-family: 'MyWebFont';
+    src: url('../font/Starjout.woff')
+    /* Safari, Android, iOS */
+
+}
+
+@font-face {
+    font-family: 'MyWebFont2';
+    src: url('../font/Star_Jedi_Rounded.woff')
+    /* Safari, Android, iOS */
+
+}
+
+
+#rpg-title {
+    font-family: 'MyWebFont';
+    color: white;
+    font-size: 90px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+#subtitle {
+    font-family: 'MyWebFont';
+    color: white;
+    font-size: 50px;
+    width: 100%
+}
+
+#start {
+    background-color: transparent;
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'MyWebFont';
+    color: red;
+    font-size: 40px;
+    width: 100%;
+
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    text-align: center;
+    width: 250px;
+}
+
+.flex-title {
+    width: 100%;
+    font-family: 'MyWebFont';
+}
+
+p {
+    color: white;
+    font-family: 'MyWebFont'
+}
+
+#weak {
+    font-family: 'MyWebFont2';
+    color: black;
+}

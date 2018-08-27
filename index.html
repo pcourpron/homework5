@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src= 'assets/javascript/javascript.js'></script>
+    <link rel='stylesheet' href='assets/css/index.css'>
+</head>
+
+<body>
+
+
+
+    <div id='player-select'>
+
+        <div class='container-fluid'>
+            <div class='row'>
+                <div class='col'>
+                    <h1> May The Force Be With You</h1>
+                    <p>
+                        Drag your player to the left, your enemy to the right
+                    </p>
+
+                    <p>
+                        Beware! Each player has a hidden counter-attack that will be activated each time you attack!
+                    </p>
+                </div>
+            </div>
+            <div class='row justify-content-between'>
+                <div class='col-sm-3'>
+                    <div class='player' id='player1'>
+                        <div class='players' data-player='player1'>
+                            <img class=' players-img' src='https://s-media-cache-ak0.pinimg.com/736x/95/55/8f/95558f29a64b64a72cc0f814bcae788c.jpg'>
+                            <h5>
+                                Mace Windu
+                            </h5>
+                            <br>
+                            <p>Health: <span class='player1-health'></span><br> Attack: <span class='player1-attack'></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-3'>
+                    <div class='player' id='player2'>
+                        <div class='players' data-player='player2'>
+                            <img class=' players-img' src='https://vignette.wikia.nocookie.net/yandere/images/8/8e/Anakin_Skywalker.png/revision/latest?cb=20170122233155'>
+                            <h5>
+                                Annakin
+                            </h5>
+                            <p>Health: <span class='player2-health'></span><br> Attack: <span class='player2-attack'></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-3'>
+                    <div class='player' id='player3'>
+                        <div class='players' data-player='player3'>
+                            <img class=' players-img' src='https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/Yoda_Attack_of_the_Clones.png/170px-Yoda_Attack_of_the_Clones.png'>
+                            <h5>
+                                Yoda
+                            </h5>
+                            <p> </p>
+                            <p>Health: <span class='player3-health'></span><br> Attack: <span class='player3-attack'></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-3'>
+                    <div class='player' id='player4'>
+                        <div class='players' data-player='player4'>
+                            <img class=' players-img' src='https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Han_Solo_depicted_in_promotional_image_for_Star_Wars_%281977%29.jpg/220px-Han_Solo_depicted_in_promotional_image_for_Star_Wars_%281977%29.jpg'>
+                            <h5>
+                                Han Solo
+                            </h5>
+                            <p>Health: <span class='player4-health'></span><br> Attack: <span class='player4-attack'></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row justify-content-between'>
+                <div class='flex'>
+                    <div class='flex-title'>Player</div>
+                    <div class='playing-boxes' id='player-box'><br></div>
+                </div>
+                <div class='col-sm-4 justify-content-center'>
+                    <div id='start-fight'> <button class='btn btn-danger btn-block btn-lg'>Fight!</button></div>
+                    <br>
+                    <br>
+                    <div id='attack'> <button class='btn btn-danger btn-block btn-lg'>Attack!</button></div>
+                </div>
+                <div class='flex'>
+                    <div class='flex-title'>Enemy</div>
+                    <div class='playing-boxes' id='enemy-box'></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+
+    <!-- Landing Page-->
+    <div id='landing-page'>
+        <br>
+        <br>
+        <div id='rpg-title'>
+            STAR WARS
+            <p id='subtitle'>
+                A role playing game.
+            </p>
+            <br>
+
+            <button id='start'>
+                Start the game!
+            </button>
+        </div>
+    </div>
+
+    <!-- Won page-->
+    <div id='winning' class='container-fluid'>
+        <div class='row'>
+            <div class='col'>
+
+            </div>
+            <div class='col-sm-9'>
+                <img class='img-fluid' src='https://cdn.shopify.com/s/files/1/1048/7912/products/The_Force_Is_Strong_1024x1024.png?v=1468252609'>
+                <br>
+                <br>
+                <h1> You Win!</h1>
+                <button class='restart btn btn-primary btn-block  btn-lg'>Restart</button>
+            </div>
+            <div class='col'>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Lost Page-->
+
+
+    <div id='lost' class='container-fluid'>
+        <div class='row'>
+            <div class='col'>
+
+            </div>
+            <div class='col-sm-9'>
+                <h1 id='weak'>The Force is weak with this one</h1>
+                <br>
+                <br>
+                <h1> You Lose!</h1>
+                <button class=' restart btn btn-primary btn-block  btn-lg'>Restart</button>
+            </div>
+            <div class='col'>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+
+
+
+
+        var deadEnemies = 0
+
+        function statsReset(player1, player2, player3, player4) {
+            $('.player1-health').text(player1.health)
+            $('.player1-attack').text(player1.attack)
+            $('.player2-health').text(player2.health)
+            $('.player2-attack').text(player2.attack)
+            $('.player3-health').text(player3.health)
+            $('.player3-attack').text(player3.attack)
+            $('.player4-health').text(player4.health)
+            $('.player4-attack').text(player4.attack)
+        }
+        statsReset(player1, player2, player3, player4)
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

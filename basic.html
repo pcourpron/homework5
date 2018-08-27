@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        h5 {
+            text-align: center;
+        }
+
+        #landing-page {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .col-sm-3 {
+            border-color: transparent;
+            border-radius: 10px;
+            border-style: solid;
+        }
+
+
+        h2 {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #enemy-select {
+            display: none;
+        }
+
+        #start-battle {
+            display: none
+        }
+
+        #attack {
+            display: none;
+        }
+
+        p {
+            text-align: center;
+
+        }
+
+        #enemy-selected {
+            display: none;
+        }
+
+        #winning {
+            display: none;
+            z-index: 10;
+           
+        }
+        #player{
+            height:100px;
+            width:auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Landing Page-->
+    <div id='landing-page'>
+        <button id='music'>
+        </button>
+        <div class='container'>
+            <div class='row'>
+                <!-- Space shooter title-->
+                <div class='col'>
+                    <div id='title'>
+                        <img src='https://occ-0-901-999.1.nflxso.net/art/87e01/5694568c69ef4be79164f46b967e7f4c1a387e01.png' id='hangman'>
+                    </div>
+                </div>
+            </div> <!-- row -->
+
+            <div class='row'>
+                <div class='col'>
+                    <button class='btn btn-danger' id='start-game'><h2>Start Game</h2></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id='player-select'>
+
+        <div class='container'>
+            <div class='row'>
+                <div class='col'>
+                    <h1> Select A Player! </h1>
+                    <h5> Hover over to see their stats!</h5>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-sm-3' id='player1' data-enemy='enemy1'>
+                    <img class='img-fluid players' src='https://images.vexels.com/media/users/3/145819/isolated/preview/486c34cf5b3b4badd52bc427dbeb44a1-caricatura-de-cohete-by-vexels.png'>
+                    <h5>
+                        Player 1
+                    </h5>
+                    <p></p><p>Health: <span id='player1-health'></span><br> Attack: <span id='player1-attack'></span> </p>
+
+                </div>
+                <div class='col-sm-3' id='player2' data-enemy='enemy2'>
+                    <img class='img-fluid players' src='https://images.vexels.com/media/users/3/145819/isolated/preview/486c34cf5b3b4badd52bc427dbeb44a1-caricatura-de-cohete-by-vexels.png'>
+                    <h5>
+                        Player 2
+                    </h5>
+                    <p>Health: <span id='player2-health'></span><br> Attack: <span id='player2-attack'></span> </p>
+
+                </div>
+                <div class='col-sm-3' id='player3' data-enemy='enemy3'>
+                    <img class='img-fluid players' src='https://images.vexels.com/media/users/3/145819/isolated/preview/486c34cf5b3b4badd52bc427dbeb44a1-caricatura-de-cohete-by-vexels.png'>
+                    <h5>
+                        Player 3
+                    </h5>
+                    <p>Health: <span id='player3-health'></span><br> Attack: <span id='player3-attack'></span> </p>
+
+                </div>
+                <div class='col-sm-3' id='player4' data-enemy='enemy4'>
+                    <img class='img-fluid players' src='https://images.vexels.com/media/users/3/145819/isolated/preview/486c34cf5b3b4badd52bc427dbeb44a1-caricatura-de-cohete-by-vexels.png'>
+                    <h5>
+                        Player 4
+                    </h5>
+                    <p>Health: <span id='player4-health'></span><br> Attack: <span id='player4-attack'></span> </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='enemy-select'>
+
+        <div class='container'>
+            <div class='row'>
+                <div class='col'>
+                    <h1> Select An Enemy! </h1>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-sm-3' id='enemy1'>
+                    <img class='img-fluid' src='https://images.vexels.com/media/users/3/145819/isolated/preview/486c34cf5b3b4badd52bc427dbeb44a1-caricatura-de-cohete-by-vexels.png'>
+                    <h5>
+                        Player 1
+                    </h5>
+                    <p>Health: <span id='enemy1-health'></span><br> Attack: <span id='enemy1-attack'></span> </p>
+
+                </div>
+                <div class='col-sm-3' id='enemy2'>
+                    <img class='img-fluid' src='https://images.vexels.com/media/users/3/145819/isolated/preview/486c34cf5b3b4badd52bc427dbeb44a1-caricatura-de-cohete-by-vexels.png'>
+                    <h5>
+                        Player 2
+                    </h5>
+                    <p>Health: <span id='enemy2-health'></span><br> Attack: <span id='enemy2-attack'></span> </p>
+
+                </div>
+                <div class='col-sm-3' id='enemy3'>
+                    <img class='img-fluid' src='https://images.vexels.com/media/users/3/145819/isolated/preview/486c34cf5b3b4badd52bc427dbeb44a1-caricatura-de-cohete-by-vexels.png'>
+                    <h5>
+                        Player 3
+                    </h5>
+                    <p>Health: <span id='enemy3-health'></span><br> Attack: <span id='enemy3-attack'></span> </p>
+
+                </div>
+                <div class='col-sm-3' id='enemy4'>
+                    <img class='img-fluid' src='https://images.vexels.com/media/users/3/145819/isolated/preview/486c34cf5b3b4badd52bc427dbeb44a1-caricatura-de-cohete-by-vexels.png'>
+                    <h5>
+                        Player 4
+                    </h5>
+                    <p>Health: <span id='enemy4-health'></span><br> Attack: <span id='enemy4-attack'></span> </p>
+
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-sm-4'></div>
+                <div class='col-sm-4'>
+                    <h2 class='btn btn-primary btn-lg' id='start-battle'>
+                        Start!
+                    </h2>
+                </div>
+                <div class='col-sm-4'></div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div id='enemy-selected'>
+        <div class='container'>
+            <div class='row'>
+                <h2> FIGHT !</h2>
+            </div>
+            <br>
+            <br>
+            <button id='attack' class='btn btn-lg btn-danger'>Attack!</button>
+            <div class='row'>
+                <div class='col-sm-3' id='insert'>
+
+                </div>
+
+                <div class='col-sm-3'>
+
+                </div>
+
+                <div class='col-sm-3'>
+
+                </div>
+
+                <div class='col-sm-3'>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id='winning' class='container'>
+        <div class='row'>
+            <div class='col'>
+
+            </div>
+            <div class='col-sm-9'>
+                <img class= 'img-fluid' src='https://cdn.shopify.com/s/files/1/1048/7912/products/The_Force_Is_Strong_1024x1024.png?v=1468252609'>
+            </div>
+            <div class = 'col'>
+
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+
+    <script>
+
+        var playerSelection
+        var enemySelection
+        var playerSelectionHolder
+
+        var player1 = {
+            health: 300,
+            attack: 5,
+            counterAttack: 20
+        }
+        var enemy1 = {
+            health: 300,
+            attack: 3,
+            counterAttack: 30
+        }
+        var player2 = {
+            health: 400,
+            attack: 3,
+            counterAttack: 50
+        }
+
+        var enemy2 = {
+            health: 200,
+            attack: 5,
+            counterAttack: 40
+        }
+        var player3
+            = {
+            health: 100,
+            attack: 50,
+            counterAttack: 20
+        }
+        var enemy3 = {
+            health: 100,
+            attack: 100,
+            counterAttack: 50
+        }
+        var player4 = {
+            health: 250,
+            attack: 30,
+            counterAttack: 20
+        }
+        var enemy4 = {
+            health: 250,
+            attack: 30,
+            counterAttack: 20
+        }
+
+        var deadEnemies = 0
+
+
+        $('#player1-health').text(player1.health)
+        $('#player1-attack').text(player1.attack)
+        $('#player2-health').text(player2.health)
+        $('#player2-attack').text(player2.attack)
+        $('#player3-health').text(player3.health)
+        $('#player3-attack').text(player3.attack)
+        $('#player4-health').text(player4.health)
+        $('#player4-attack').text(player4.attack)
+
+
+        $('#enemy1-health').text(enemy1.health)
+        $('#enemy1-attack').text(enemy1.attack)
+        $('#enemy2-health').text(enemy2.health)
+        $('#enemy2-attack').text(enemy2.attack)
+        $('#enemy3-health').text(enemy3.health)
+        $('#enemy3-attack').text(enemy3.attack)
+        $('#enemy4-health').text(enemy4.health)
+        $('#enemy4-attack').text(enemy4.attack)
+
+
+
+
+        function borderColor(column) {
+            $('#player-select .col-sm-3').css('box-shadow', 'none');
+            $('#player-select .col-sm-3').hide()
+            $(column).show()
+            $(column).css('box-shadow', '0 0 15px 10px red');
+        }
+        function borderColorEnemy(column) {
+            $('#enemy-select .col-sm-3').css('box-shadow', 'none');
+
+            $(column).css('box-shadow', '0 0 15px 10px red');
+        }
+
+        function displayEnemies(enemy) {
+            $('#enemy-select').show()
+            for (let index = 1; index < 5; index++) {
+                $('#enemy' + index).show()
+            }
+            $('#' + $(enemy).data('enemy')).hide()
+            $('#' + $(enemy).data('enemy')).css('box-shadow', 'none')
+
+        }
+
+
+        $('#player1').click(function () {
+            borderColor(this)
+            playerSelection = player1
+            playerSelectionHolder = 'player1'
+            displayEnemies(this)
+        })
+        $('#player2').click(function () {
+            borderColor(this)
+            displayEnemies(this)
+            playerSelection = player2
+            playerSelectionHolder = 'player2'
+        })
+        $('#player3').click(function () {
+            borderColor(this)
+            playerSelection = player3
+            playerSelectionHolder = 'player3'
+            displayEnemies(this)
+        })
+        $('#player4').click(function () {
+            borderColor(this)
+            playerSelection = player4
+            playerSelectionHolder = 'player4'
+            displayEnemies(this)
+        })
+
+
+
+
+        $('#enemy1').click(function () {
+            borderColorEnemy(this)
+            enemySelection = '#enemy1'
+            $('#start-battle').show()
+            enemySelectionBattle = enemy1
+
+        })
+        $('#enemy2').click(function () {
+            borderColorEnemy(this)
+            enemySelection = '#enemy2'
+            $('#start-battle').show()
+            enemySelectionBattle = enemy2
+        })
+        $('#enemy3').click(function () {
+            borderColorEnemy(this)
+            enemySelection = '#enemy3'
+            $('#start-battle').show()
+            enemySelectionBattle = enemy3
+
+        })
+        $('#enemy4').click(function () {
+            borderColorEnemy(this)
+            enemySelection = '#enemy4'
+            $('#start-battle').show()
+            enemySelectionBattle = enemy4
+
+        })
+
+
+        var i = 1;
+
+
+        $('#start-battle').click(function () {
+
+            $('#start-battle').hide()
+            $('#attack').show()
+            $('#enemy-select ' + enemySelection).hide()
+            $('#enemy-selected .row #insert').prepend($(enemySelection).html())
+            $('#enemy-selected #insert').css('box-shadow', '0 0 15px 10px red');
+            $('#enemy-select').hide()
+            $('#enemy-selected').show()
+
+            if (i == 3) {
+                $('#' + playerSelectionHolder).css('margin-bottom', '50px')
+            }
+            i++
+
+
+        })
+
+
+
+        $('#attack').click(function () {
+
+            enemySelectionBattle.health -= playerSelection.attack
+
+            if (enemySelectionBattle.health > 0) {
+                playerSelection.health -= enemySelectionBattle.counterAttack
+                console.log('hi')
+            }
+
+            if (playerSelection.health < 0) {
+                gameLost()
+            }
+
+            if (enemySelectionBattle.health < 0) {
+                $('#enemy-selected .row #insert').empty()
+                $('#enemy-selected .row #insert').css('box-shadow', 'none')
+                $('#attack').hide()
+                $('#start-battle').show()
+                $('#enemy-select').show()
+                $('#enemy-selected').hide()
+                deadEnemies++
+                if (deadEnemies === 3) {
+                    gameWon()
+                }
+            }
+            playerSelection.attack += playerSelection.attack
+
+            $("#" + playerSelectionHolder + '-health').text(playerSelection.health)
+            $('#enemy-selected ' + enemySelection + '-health').text(enemySelectionBattle.health)
+            $("#" + playerSelectionHolder + '-attack').text(playerSelection.attack)
+
+
+
+        })
+
+        function gameWon() {
+            $('body').children().css('display', 'none')
+            $('#winning').css('display','block')
+            $('body').css('background-image', 'url(\'https://vl-media.fr/wp-content/uploads/2017/04/star-wars-land.jpg\'')
+
+        }
+
+
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
